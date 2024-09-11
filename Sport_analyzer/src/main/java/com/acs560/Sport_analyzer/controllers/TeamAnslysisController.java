@@ -1,4 +1,4 @@
-package com.acs560.Sport_analyzer.controllers;
+	package com.acs560.Sport_analyzer.controllers;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
