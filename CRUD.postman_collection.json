@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "cd2b23d4-df8e-493c-824f-8b904be8a53e",
+		"name": "CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38203566"
+	},
+	"item": [
+		{
+			"name": "POST",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"year\": 2019,\r\n        \"name\": \"Liverpool Fond\",\r\n        \"league\": \"Premier League\",\r\n        \"wins\": 28,\r\n        \"losses\": 7,\r\n        \"points\": 76\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/teams?Content-Type=application/jsonn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"teams"
+					],
+					"query": [
+						{
+							"key": "Content-Type",
+							"value": "application/jsonn"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Read a team",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"year\": 2019,\r\n        \"name\": \"Liverpool Fond\",\r\n        \"league\": \"Premier League\",\r\n        \"wins\": 28,\r\n        \"losses\": 7,\r\n        \"points\": 76\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/teams?Content-Type=application/jsonn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"teams"
+							],
+							"query": [
+								{
+									"key": "Content-Type",
+									"value": "application/jsonn"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "PUT",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"year\": 2019,\r\n        \"name\": \"Liverpool Fond\",\r\n        \"league\": \"Premier League\",\r\n        \"wins\": 28,\r\n        \"losses\": 7,\r\n        \"points\": 76\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/teams?Content-Type=application/jsonn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"teams"
+							],
+							"query": [
+								{
+									"key": "Content-Type",
+									"value": "application/jsonn"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}

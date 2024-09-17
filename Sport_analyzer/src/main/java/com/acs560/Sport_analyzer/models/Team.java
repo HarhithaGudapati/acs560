@@ -82,15 +82,21 @@ public class Team {
     }
     
     @Override
+    public int hashCode() {
+        return Objects.hash(year, name, league, wins, losses, points);
+    }
+    
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Team team = (Team) o;
         return year == team.year && wins == team.wins && losses == team.losses && points == team.points && Objects.equals(name, team.name) && Objects.equals(league, team.league);
     }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(year, name, league, wins, losses, points);
-    }
+/* public Bill(String name, int month2, int year2) {
+		this.utilityName = name;
+		this.month = month2;
+		this.year = year2;
+	}
+*/
 }
