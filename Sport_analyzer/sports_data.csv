@@ -1,18 +1,18 @@
-com.acs560.Sport_analyzer.models.Team@8a77058c
-com.acs560.Sport_analyzer.models.Team@49a0a193
-com.acs560.Sport_analyzer.models.Team@61f02343
-com.acs560.Sport_analyzer.models.Team@9e83ada5
-com.acs560.Sport_analyzer.models.Team@a0388a01
-com.acs560.Sport_analyzer.models.Team@63a51a54
-com.acs560.Sport_analyzer.models.Team@8c2bf8fe
-com.acs560.Sport_analyzer.models.Team@4b557a11
-com.acs560.Sport_analyzer.models.Team@8de0c6ca
-com.acs560.Sport_analyzer.models.Team@6559c9d9
-com.acs560.Sport_analyzer.models.Team@a1ed3d2c
-com.acs560.Sport_analyzer.models.Team@4d0a780d
-com.acs560.Sport_analyzer.models.Team@8f95a734
-com.acs560.Sport_analyzer.models.Team@670eb4fe
-com.acs560.Sport_analyzer.models.Team@a3a210e6
-com.acs560.Sport_analyzer.models.Team@4ebf2ade
-com.acs560.Sport_analyzer.models.Team@670ebff6
-com.acs560.Sport_analyzer.models.Team@c80da139
+Team{year=2018, name='Liverpool', league='Premier League', wins=21, losses=2, points=91}
+Team{year=2018, name='Manchester Utd', league='Premier League', wins=20, losses=10, points=84}
+Team{year=2018, name='Chelsea', league='Premier League', wins=24, losses=3, points=79}
+Team{year=2018, name='Manchester City', league='Premier League', wins=28, losses=11, points=97}
+Team{year=2019, name='Manchester City', league='Premier League', wins=29, losses=11, points=93}
+Team{year=2019, name='Chelsea', league='Premier League', wins=32, losses=6, points=92}
+Team{year=2019, name='Liverpool', league='Premier League', wins=28, losses=7, points=76}
+Team{year=2019, name='Manchester Utd', league='Premier League', wins=20, losses=9, points=82}
+Team{year=2020, name='Liverpool', league='Premier League', wins=25, losses=10, points=95}
+Team{year=2020, name='Chelsea', league='Premier League', wins=21, losses=8, points=79}
+Team{year=2020, name='Manchester City', league='Premier League', wins=19, losses=12, points=84}
+Team{year=2020, name='Manchester Utd', league='Premier League', wins=30, losses=7, points=99}
+Team{year=2021, name='Liverpool', league='Premier League', wins=27, losses=13, points=75}
+Team{year=2021, name='Chelsea', league='Premier League', wins=26, losses=6, points=78}
+Team{year=2021, name='Manchester City', league='Premier League', wins=18, losses=3, points=71}
+Team{year=2021, name='Manchester Utd', league='Premier League', wins=20, losses=5, points=93}
+Team{year=2021, name='Chelsea', league='Premier League', wins=29, losses=3, points=96}
+Team{year=2019, name='Liverpool Fond', league='Premier League', wins=28, losses=7, points=76}

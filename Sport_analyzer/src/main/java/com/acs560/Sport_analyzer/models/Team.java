@@ -87,16 +87,37 @@ public class Team {
     }
     
     @Override
+    public String toString() {
+        return "Team{" +
+                "year=" + year +
+                ", name='" + name + '\'' +
+                ", league='" + league + '\'' +
+                ", wins=" + wins +
+                ", losses=" + losses +
+                ", points=" + points +
+                '}';
+    }
+    
+
+    @Override
+   /* public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Team team = (Team) o;
+        //TODO mcp says to edit this method
+        return year == team.year && wins == team.wins && losses == team.losses && points == team.points && Objects.equals(name, team.name) && Objects.equals(league, team.league);
+    } */
+    
+   
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Team team = (Team) o;
-        return year == team.year && wins == team.wins && losses == team.losses && points == team.points && Objects.equals(name, team.name) && Objects.equals(league, team.league);
+        
+        // Update to compare only names for Postman updates
+        return Objects.equals(name, team.name);
     }
-/* public Bill(String name, int month2, int year2) {
-		this.utilityName = name;
-		this.month = month2;
-		this.year = year2;
-	}
-*/
+
+
+
 }

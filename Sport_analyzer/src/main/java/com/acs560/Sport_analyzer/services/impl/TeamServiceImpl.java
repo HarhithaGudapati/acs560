@@ -276,7 +276,10 @@ public class TeamServiceImpl implements TeamService {
 
 package com.acs560.Sport_analyzer.services.impl;
 
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -286,60 +289,6 @@ import org.springframework.stereotype.Service;
 import com.acs560.Sport_analyzer.repositories.TeamRepository;
 import com.acs560.Sport_analyzer.services.TeamService;
 
-/*@Service
-public class TeamServiceImpl implements TeamService {
-
-    @Autowired
-    private TeamRepository teamRepository;
-
-    @Override
-    public List<Team> getTeams() {
-        return teamRepository.getTeams();
-    }
-
-    @Override
-    public Team getTeamByName(String name) {
-        return teamRepository.getTeams().stream()
-                .filter(team -> team.getName().equalsIgnoreCase(name))
-                .findFirst()
-                .orElse(null);
-    }
-
-    @Override
-    public List<Team> getTeamsByYear(int year) {
-        return teamRepository.getTeams().stream()
-                .filter(team -> team.getYear() == year)
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<Team> getTeamsByLeague(String league) {
-        return teamRepository.getTeams().stream()
-                .filter(team -> team.getLeague() != null && team.getLeague().equalsIgnoreCase(league))
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<Team> getTeamsByWins(int wins) {
-        return teamRepository.getTeams().stream()
-                .filter(team -> team.getWins() == wins)
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<Team> getTeamsByLosses(int losses) {
-        return teamRepository.getTeams().stream()
-                .filter(team -> team.getLosses() == losses)
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<Team> getTeamsByPoints(int points) {
-        return teamRepository.getTeams().stream()
-                .filter(team -> team.getPoints() == points)
-                .collect(Collectors.toList());
-    }
-} */
 
 @Service
 public class TeamServiceImpl implements TeamService {
@@ -394,6 +343,8 @@ public class TeamServiceImpl implements TeamService {
                 .filter(team -> team.getPoints() == points)
                 .collect(Collectors.toList());
     }
+   
+
 
     @Override
     public boolean addTeam(Team team) {
@@ -412,7 +363,64 @@ public class TeamServiceImpl implements TeamService {
 
 	@Override
 	public List<Team> getTeams(String league) {
-		// TODO Auto-generated method stub
 		return null;
+		// TODO Auto-generated method stub
+		    
 	}
+	
+	
+	
+	
+	
+	
+	
+	// new functional requirements added 
+
+	@Override
+	public List<Team> getTeamsByYearRange(int startYear, int endYear) {
+		// TODO Auto-generated method stub
+		return teamRepository.getTeams().stream()
+		        .filter(t -> t.getYear() >= startYear && t.getYear() <= endYear)
+		        .collect(Collectors.toList());
+	}
+
+	@Override
+	public List<Team> getTopTeamsByWins(int count) {
+	    return teamRepository.getTeams().stream() // Get all teams
+	            .sorted(Comparator.comparingInt(Team::getWins).reversed()) // Sort by wins in descending order
+	            .limit(count) // Limit to the specified count
+	            .collect(Collectors.toList()); // Collect the results into a list
+	}
+	
+	 @Override
+	    public Map<String, Object> compareTeams(String teamName1, String teamName2) {
+	        Team team1 = getTeamByName(teamName1);
+	        Team team2 = getTeamByName(teamName2);
+
+	        if (team1 == null || team2 == null) {
+	            throw new IllegalArgumentException("One or both teams not found");
+	        }
+
+	        Map<String, Object> comparisonResult = new HashMap<>();
+	        comparisonResult.put("team1Name", team1.getName());
+	        comparisonResult.put("team2Name", team2.getName());
+
+	        // Compare wins
+	        comparisonResult.put("team1Wins", team1.getWins());
+	        comparisonResult.put("team2Wins", team2.getWins());
+	        comparisonResult.put("winsComparison", Integer.compare(team1.getWins(), team2.getWins()));
+
+	        // Compare losses
+	        comparisonResult.put("team1Losses", team1.getLosses());
+	        comparisonResult.put("team2Losses", team2.getLosses());
+	        comparisonResult.put("lossesComparison", Integer.compare(team1.getLosses(), team2.getLosses()));
+
+	        // Compare points
+	        comparisonResult.put("team1Points", team1.getPoints());
+	        comparisonResult.put("team2Points", team2.getPoints());
+	        comparisonResult.put("pointsComparison", Integer.compare(team1.getPoints(), team2.getPoints()));
+
+	        return comparisonResult;
+	    }
+
 }

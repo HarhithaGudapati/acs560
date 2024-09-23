@@ -81,6 +81,28 @@ public class TeamAnalysisServiceImpl implements TeamAnalysisService {
                 .average()
                 .orElse(0);
     }
+    
+    public double getAverageWinsByYearRange(int startYear, int endYear) {
+        // Filter teams by the specified year range
+        List<Team> teamsByYearRange = teamRepository.getTeams().stream()
+                .filter(team -> team.getYear() >= startYear && team.getYear() <= endYear)
+                .collect(Collectors.toList());
+
+        // Calculate and return the average number of wins for teams in that year range
+        return teamsByYearRange.stream()
+                .mapToInt(Team::getWins) // Get the wins for each team
+                .average() // Calculate the average
+                .orElse(0); // Return 0 if no teams are found in the year range
+    }
+    
+    public List<Team> getTopTeamsByWins(int count) {
+    	List<Team> teams = teamRepository.getTeams();
+        System.out.println("Retrieved teams: " + teams);
+        return teams.stream()
+                .sorted(Comparator.comparingInt(Team::getWins).reversed())
+                .limit(count)
+                .collect(Collectors.toList());
+    }
 
 
     @Override

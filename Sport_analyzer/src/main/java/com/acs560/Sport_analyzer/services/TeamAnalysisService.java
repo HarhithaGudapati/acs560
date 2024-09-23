@@ -1,5 +1,7 @@
 package com.acs560.Sport_analyzer.services;
 
+import java.util.List;
+
 import sports.acs560.performance_analyzer.models.Team;
 
 public interface TeamAnalysisService {
@@ -24,13 +26,8 @@ public interface TeamAnalysisService {
 
 	boolean deleteTeam(Team team);
 
-	boolean addTeam(com.acs560.Sport_analyzer.models.Team team);
 
-	boolean updateTeam(com.acs560.Sport_analyzer.models.Team team);
-
-	boolean deleteTeam(com.acs560.Sport_analyzer.models.Team team);
-	
-	
+	List<Team> getTeamsByYearRange(int startYear, int endYear);
 	
 	
 	

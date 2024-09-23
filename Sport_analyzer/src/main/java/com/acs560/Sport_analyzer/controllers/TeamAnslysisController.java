@@ -1,6 +1,8 @@
 package com.acs560.Sport_analyzer.controllers;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.acs560.Sport_analyzer.services.TeamAnalysisService;
 
 import sports.acs560.performance_analyzer.models.Team;
+import sports.acs560.performance_analyzer.services.TeamService;
 
 
 
@@ -55,6 +58,7 @@ public class TeamAnslysisController {
         double averageWins = teamAnalysisService.getAverageWinsByLeagueAndYear(league, year);
         return ResponseEntity.ok(averageWins);
     }
+    
 
     @PostMapping("/add")
     public ResponseEntity<Team> addTeam(@RequestBody Team team) {
