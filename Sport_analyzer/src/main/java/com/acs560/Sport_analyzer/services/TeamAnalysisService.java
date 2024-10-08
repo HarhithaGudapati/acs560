@@ -2,7 +2,7 @@ package com.acs560.Sport_analyzer.services;
 
 import java.util.List;
 
-import sports.acs560.performance_analyzer.models.Team;
+import com.acs560.Sport_analyzer.models.Team;
 
 public interface TeamAnalysisService {
 
