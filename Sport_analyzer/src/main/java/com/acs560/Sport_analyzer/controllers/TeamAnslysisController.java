@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.acs560.Sport_analyzer.services.TeamAnalysisService;
 
-import sports.acs560.performance_analyzer.models.Team;
-import sports.acs560.performance_analyzer.services.TeamService;
+import com.acs560.Sport_analyzer.models.Team;
+import com.acs560.Sport_analyzer.services.TeamService;
 
 
 
